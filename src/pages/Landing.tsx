@@ -19,6 +19,7 @@ export default function Landing() {
 
         <div className="container-page pt-16 pb-20 lg:pt-24 lg:pb-28">
           <div className="max-w-3xl">
+            <img src="/Stagelink_-_1.png" alt="Stagelink" className="h-16 w-auto mb-6 animate-fade-up" />
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 animate-fade-up">
               <Sparkles className="h-3.5 w-3.5" />
               La plateforme qui rapproche les talents et les entreprises
@@ -27,7 +28,7 @@ export default function Landing() {
               Trouvez le stage qui lance <span className="text-brand-600">votre carrière</span>
             </h1>
             <p className="mt-5 text-lg text-ink-600 max-w-2xl animate-fade-up" style={{ animationDelay: '120ms' }}>
-              FinalStageLink met en relation les étudiants et chercheurs de stage avec les entreprises
+              Stagelink met en relation les étudiants et chercheurs de stage avec les entreprises
               qui recrutent. Stages académiques, stages professionnels, alternances — tout au même endroit.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: '180ms' }}>
@@ -145,7 +146,7 @@ export default function Landing() {
             Prêt à trouver votre prochain stage ?
           </h2>
           <p className="relative mt-4 text-brand-100 max-w-xl mx-auto">
-            Rejoignez des milliers d'étudiants et d'entreprises qui utilisent FinalStageLink.
+            Rejoignez des milliers d'étudiants et d'entreprises qui utilisent Stagelink.
           </p>
           <div className="relative mt-8 flex flex-col sm:flex-row justify-center gap-3">
             <Link to="/signup" className="btn bg-white text-brand-700 px-6 py-3 text-base hover:bg-brand-50">

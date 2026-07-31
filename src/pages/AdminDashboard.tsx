@@ -75,7 +75,7 @@ function Overview() {
     <div className="space-y-8">
       <div>
         <h2 className="font-display text-2xl font-bold text-ink-900">Tableau de bord administrateur</h2>
-        <p className="text-ink-500 mt-1">Pilotez la plateforme FinalStageLink.</p>
+        <p className="text-ink-500 mt-1">Pilotez la plateforme Stagelink.</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

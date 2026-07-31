@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../lib/auth'
 import type { ReactNode } from 'react'
-import { GraduationCap, Building2, ShieldCheck, LogOut, Menu, X, LayoutDashboard } from 'lucide-react'
+import { Building2, ShieldCheck, LogOut, Menu, X, LayoutDashboard } from 'lucide-react'
 import { useState } from 'react'
 
 type NavItem = { to: string; label: string; icon: ReactNode; end?: boolean }
@@ -12,26 +12,23 @@ export default function DashboardLayout({ title, nav, children }: { title: strin
   const [open, setOpen] = useState(false)
 
   const roleLabel = profile?.role === 'admin' ? 'Administrateur' : profile?.role === 'company' ? 'Entreprise' : 'Étudiant'
-  const RoleIcon = profile?.role === 'admin' ? ShieldCheck : profile?.role === 'company' ? Building2 : GraduationCap
+  const RoleIcon = profile?.role === 'admin' ? ShieldCheck : profile?.role === 'company' ? Building2 : null
 
   return (
     <div className="min-h-screen bg-ink-50 flex">
       {/* Sidebar */}
       <aside className={`fixed lg:sticky top-0 z-40 h-screen w-64 shrink-0 bg-white border-r border-ink-200 flex flex-col transition-transform ${open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
-        <div className="h-16 flex items-center px-5 border-b border-ink-200">
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
-              <GraduationCap className="h-4 w-4" />
-            </div>
-            <span className="font-display font-bold text-ink-900 text-sm">FinalStageLink</span>
+        <div className="h-16 flex items-center justify-between px-5 border-b border-ink-200">
+          <Link to="/" className="flex items-center">
+            <img src="/Stagelink_-_1.png" alt="Stagelink" className="h-9 w-auto" />
           </Link>
-          <button className="ml-auto lg:hidden btn-ghost p-1.5" onClick={() => setOpen(false)}><X className="h-5 w-5" /></button>
+          <button className="lg:hidden btn-ghost p-1.5" onClick={() => setOpen(false)}><X className="h-5 w-5" /></button>
         </div>
 
         <div className="p-4">
           <div className="flex items-center gap-3 rounded-xl bg-ink-50 p-3">
             <div className="grid h-10 w-10 place-items-center rounded-full bg-brand-100 text-brand-700">
-              <RoleIcon className="h-5 w-5" />
+              {RoleIcon && <RoleIcon className="h-5 w-5" />}
             </div>
             <div className="min-w-0">
               <p className="text-sm font-medium text-ink-900 truncate">{profile?.full_name ?? 'Utilisateur'}</p>

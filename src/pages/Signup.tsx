@@ -40,7 +40,7 @@ export default function Signup() {
         <div className="mx-auto max-w-md">
           <div className="text-center mb-8">
             <h1 className="font-display text-3xl font-bold text-ink-900">Créer un compte</h1>
-            <p className="mt-2 text-ink-500">Rejoignez FinalStageLink en moins d'une minute.</p>
+            <p className="mt-2 text-ink-500">Rejoignez Stagelink en moins d'une minute.</p>
           </div>
 
           <form onSubmit={onSubmit} className="card p-6 sm:p-8 space-y-5">

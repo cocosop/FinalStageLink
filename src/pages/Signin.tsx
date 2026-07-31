@@ -37,7 +37,7 @@ export default function Signin() {
         <div className="mx-auto max-w-md">
           <div className="text-center mb-8">
             <h1 className="font-display text-3xl font-bold text-ink-900">Connexion</h1>
-            <p className="mt-2 text-ink-500">Heureux de vous revoir sur FinalStageLink.</p>
+            <p className="mt-2 text-ink-500">Heureux de vous revoir sur Stagelink.</p>
           </div>
 
           <form onSubmit={onSubmit} className="card p-6 sm:p-8 space-y-5">
