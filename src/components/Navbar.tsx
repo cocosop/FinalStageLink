@@ -13,12 +13,12 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-ink-200/70">
-      <div className="container-page flex h-16 items-center justify-between">
+      <div className="container-page flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center group">
           <img
             src="/Stagelink_-_1.png"
             alt="Stagelink"
-            className="h-10 w-auto transition group-hover:scale-105"
+            className="h-16 w-auto transition group-hover:scale-105"
           />
         </Link>
 

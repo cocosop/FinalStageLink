@@ -19,7 +19,6 @@ export default function Landing() {
 
         <div className="container-page pt-16 pb-20 lg:pt-24 lg:pb-28">
           <div className="max-w-3xl">
-            <img src="/Stagelink_-_1.png" alt="Stagelink" className="h-16 w-auto mb-6 animate-fade-up" />
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 animate-fade-up">
               <Sparkles className="h-3.5 w-3.5" />
               La plateforme qui rapproche les talents et les entreprises
