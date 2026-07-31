@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container-page py-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <Link to="/" className="flex items-center">
-            <img src="/Stagelink_-_1.png" alt="Stagelink" className="h-9 w-auto" />
+            <img src="/edited-photo_(2).png" alt="Stagelink" className="h-14 w-auto" />
           </Link>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-500">
             <Link to="/browse" className="hover:text-ink-900 transition">Offres de stage</Link>

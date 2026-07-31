@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="container-page flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center group">
           <img
-            src="/Stagelink_-_1.png"
+            src="/edited-photo_(2).png"
             alt="Stagelink"
             className="h-16 w-auto transition group-hover:scale-105"
           />

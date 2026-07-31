@@ -20,7 +20,7 @@ export default function DashboardLayout({ title, nav, children }: { title: strin
       <aside className={`fixed lg:sticky top-0 z-40 h-screen w-64 shrink-0 bg-white border-r border-ink-200 flex flex-col transition-transform ${open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="h-16 flex items-center justify-between px-5 border-b border-ink-200">
           <Link to="/" className="flex items-center">
-            <img src="/Stagelink_-_1.png" alt="Stagelink" className="h-9 w-auto" />
+            <img src="/edited-photo_(2).png" alt="Stagelink" className="h-12 w-auto" />
           </Link>
           <button className="lg:hidden btn-ghost p-1.5" onClick={() => setOpen(false)}><X className="h-5 w-5" /></button>
         </div>
