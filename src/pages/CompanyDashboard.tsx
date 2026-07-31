@@ -5,7 +5,7 @@ import { useAuth } from '../lib/auth'
 import DashboardLayout from '../components/DashboardLayout'
 import { StatCard, PageLoader, EmptyState, ErrorBanner, Spinner, Avatar } from '../components/ui'
 import { badge, classByStatus, labelByStatus, labelByType, formatDate, initials } from '../lib/utils'
-import { LayoutDashboard, Briefcase, FileText, Building2, Plus, Pencil, Trash2, MapPin, Clock, CheckCircle2, XCircle } from 'lucide-react'
+import { LayoutDashboard, Briefcase, FileText, Building2, Plus, Pencil, Trash2, MapPin, Clock, CircleCheck as CheckCircle2, Circle as XCircle } from 'lucide-react'
 
 const nav = [
   { to: '/company', label: 'Vue d\'ensemble', icon: <LayoutDashboard className="h-4 w-4" />, end: true },

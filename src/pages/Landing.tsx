@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useAuth } from '../lib/auth'
-import { GraduationCap, Building2, ShieldCheck, Search, ArrowRight, Sparkles, FileText, Users, BarChart3, CheckCircle2 } from 'lucide-react'
+import { GraduationCap, Building2, ShieldCheck, Search, ArrowRight, Sparkles, FileText, Users, ChartBar as BarChart3, CircleCheck as CheckCircle2 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 

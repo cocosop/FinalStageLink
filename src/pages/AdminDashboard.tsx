@@ -4,7 +4,7 @@ import { supabase, type Profile, type Company, type Internship, type Application
 import DashboardLayout from '../components/DashboardLayout'
 import { StatCard, PageLoader, EmptyState, Avatar } from '../components/ui'
 import { badge, classByStatus, labelByStatus, labelByType, formatDate, timeAgo, initials } from '../lib/utils'
-import { LayoutDashboard, Users, Building2, Briefcase, FileText, ShieldCheck, CheckCircle2, XCircle, Activity } from 'lucide-react'
+import { LayoutDashboard, Users, Building2, Briefcase, FileText, ShieldCheck, CircleCheck as CheckCircle2, Circle as XCircle, Activity } from 'lucide-react'
 
 const nav = [
   { to: '/admin', label: 'Vue d\'ensemble', icon: <LayoutDashboard className="h-4 w-4" />, end: true },

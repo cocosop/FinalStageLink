@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../lib/auth'
 import type { Role } from '../lib/supabase'
-import { GraduationCap, Building2, ArrowRight, Mail, Lock, User, AlertCircle } from 'lucide-react'
+import { GraduationCap, Building2, ArrowRight, Mail, Lock, User, CircleAlert as AlertCircle } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import { ErrorBanner, Spinner } from '../components/ui'
 

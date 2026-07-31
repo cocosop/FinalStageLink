@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { PageLoader, EmptyState, ErrorBanner, Spinner, Avatar } from '../components/ui'
 import { badge, classByStatus, labelByStatus, labelByType, formatDate } from '../lib/utils'
-import { ArrowLeft, MapPin, Clock, Briefcase, Wifi, Users, Calendar, Wallet, Building2, CheckCircle2, FileText } from 'lucide-react'
+import { ArrowLeft, MapPin, Clock, Briefcase, Wifi, Users, Calendar, Wallet, Building2, CircleCheck as CheckCircle2, FileText } from 'lucide-react'
 
 export default function InternshipDetail() {
   const { id } = useParams()
