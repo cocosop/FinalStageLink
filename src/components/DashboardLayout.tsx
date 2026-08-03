@@ -17,22 +17,22 @@ export default function DashboardLayout({ title, nav, children }: { title: strin
   return (
     <div className="min-h-screen bg-ink-50 flex">
       {/* Sidebar */}
-      <aside className={`fixed lg:sticky top-0 z-40 h-screen w-64 shrink-0 bg-white border-r border-ink-200 flex flex-col transition-transform ${open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
-        <div className="h-16 flex items-center justify-between px-5 border-b border-ink-200">
+      <aside className={`fixed lg:sticky top-0 z-40 h-screen w-64 shrink-0 bg-ink-900 flex flex-col transition-transform ${open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+        <div className="h-16 flex items-center justify-between px-5 border-b border-ink-800">
           <Link to="/" className="flex items-center">
-            <img src="/edited-photo_(2).png" alt="Stagelink" className="h-12 w-auto" />
+            <img src="/edited-photo_(2).png" alt="Stagelink" className="h-10 w-auto brightness-0 invert" />
           </Link>
-          <button className="lg:hidden btn-ghost p-1.5" onClick={() => setOpen(false)}><X className="h-5 w-5" /></button>
+          <button className="lg:hidden text-ink-400 hover:text-white p-1.5" onClick={() => setOpen(false)}><X className="h-5 w-5" /></button>
         </div>
 
         <div className="p-4">
-          <div className="flex items-center gap-3 rounded-xl bg-ink-50 p-3">
-            <div className="grid h-10 w-10 place-items-center rounded-full bg-brand-100 text-brand-700">
+          <div className="flex items-center gap-3 rounded-xl bg-ink-800 p-3">
+            <div className="grid h-10 w-10 place-items-center rounded-full bg-brand-600 text-white">
               {RoleIcon && <RoleIcon className="h-5 w-5" />}
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-medium text-ink-900 truncate">{profile?.full_name ?? 'Utilisateur'}</p>
-              <p className="text-xs text-ink-500">{roleLabel}</p>
+              <p className="text-sm font-medium text-white truncate">{profile?.full_name ?? 'Utilisateur'}</p>
+              <p className="text-xs text-ink-400">{roleLabel}</p>
             </div>
           </div>
         </div>
@@ -41,8 +41,8 @@ export default function DashboardLayout({ title, nav, children }: { title: strin
           {nav.map((item) => (
             <NavLink key={item.to} to={item.to} end={item.end}
               className={({ isActive }) => isActive
-                ? 'flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium bg-brand-50 text-brand-700'
-                : 'flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-ink-600 hover:bg-ink-50 hover:text-ink-900'}
+                ? 'flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium bg-brand-600 text-white'
+                : 'flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-ink-300 hover:bg-ink-800 hover:text-white'}
               onClick={() => setOpen(false)}>
               {item.icon}
               {item.label}
@@ -50,17 +50,17 @@ export default function DashboardLayout({ title, nav, children }: { title: strin
           ))}
         </nav>
 
-        <div className="p-3 border-t border-ink-200 space-y-1">
-          <Link to="/" className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-ink-600 hover:bg-ink-50 hover:text-ink-900">
+        <div className="p-3 border-t border-ink-800 space-y-1">
+          <Link to="/" className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-ink-300 hover:bg-ink-800 hover:text-white">
             <LayoutDashboard className="h-4 w-4" /> Accueil
           </Link>
-          <button onClick={async () => { await signOut(); navigate('/') }} className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-ink-600 hover:bg-red-50 hover:text-red-600">
+          <button onClick={async () => { await signOut(); navigate('/') }} className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-ink-300 hover:bg-red-500/10 hover:text-red-400">
             <LogOut className="h-4 w-4" /> Déconnexion
           </button>
         </div>
       </aside>
 
-      {open && <div className="fixed inset-0 z-30 bg-ink-900/30 lg:hidden" onClick={() => setOpen(false)} />}
+      {open && <div className="fixed inset-0 z-30 bg-ink-900/50 lg:hidden" onClick={() => setOpen(false)} />}
 
       {/* Main */}
       <div className="flex-1 min-w-0 flex flex-col">

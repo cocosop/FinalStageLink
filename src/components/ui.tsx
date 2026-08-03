@@ -43,21 +43,26 @@ export function Avatar({ name, src, size = 40 }: { name: string | null | undefin
   return (
     <div
       style={{ width: size, height: size, fontSize: size * 0.36 }}
-      className="grid place-items-center rounded-full bg-brand-100 text-brand-700 font-semibold"
+      className="grid place-items-center rounded-full bg-ink-100 text-ink-700 font-semibold"
     >
       {init}
     </div>
   )
 }
 
-export function StatCard({ label, value, hint, icon }: { label: string; value: ReactNode; hint?: string; icon?: ReactNode }) {
+export function StatCard({ label, value, hint, icon, tone = 'neutral' }: { label: string; value: ReactNode; hint?: string; icon?: ReactNode; tone?: 'neutral' | 'brand' | 'accent' }) {
+  const tones = {
+    neutral: 'bg-ink-50 text-ink-700',
+    brand: 'bg-brand-50 text-brand-600',
+    accent: 'bg-accent-50 text-accent-600',
+  }[tone]
   return (
-    <div className="card p-5">
+    <div className="card-hover p-5">
       <div className="flex items-start justify-between">
         <p className="text-sm text-ink-500">{label}</p>
-        {icon && <div className="text-ink-400">{icon}</div>}
+        {icon && <div className={`grid h-9 w-9 place-items-center rounded-xl ${tones}`}>{icon}</div>}
       </div>
-      <p className="mt-2 font-display text-3xl font-bold text-ink-900">{value}</p>
+      <p className="mt-3 font-display text-3xl font-extrabold text-ink-900">{value}</p>
       {hint && <p className="mt-1 text-xs text-ink-400">{hint}</p>}
     </div>
   )

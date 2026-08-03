@@ -6,21 +6,21 @@ import { badge, classByStatus, labelByStatus, labelByType, formatDate, initials 
 export function InternshipCard({ internship }: { internship: Internship }) {
   const company = internship.company
   return (
-    <Link to={`/internships/${internship.id}`} className="card p-5 group hover:shadow-card transition-all duration-300 hover:-translate-y-0.5 flex flex-col">
+    <Link to={`/internships/${internship.id}`} className="card-hover p-5 group flex flex-col">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
-          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-700 font-semibold text-sm">
+          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-50 text-ink-700 font-semibold text-sm overflow-hidden">
             {company?.logo_url ? <img src={company.logo_url} alt="" className="h-11 w-11 rounded-xl object-cover" /> : initials(company?.name ?? '?')}
           </div>
           <div className="min-w-0">
             <p className="text-xs text-ink-500 truncate">{company?.name ?? 'Entreprise'}</p>
-            <span className={badge('bg-brand-50 text-brand-700')}>{labelByType(internship.type)}</span>
+            <span className={badge('bg-accent-50 text-accent-700')}>{labelByType(internship.type)}</span>
           </div>
         </div>
         <span className={badge(classByStatus(internship.status))}>{labelByStatus(internship.status)}</span>
       </div>
 
-      <h3 className="mt-4 font-display font-semibold text-ink-900 group-hover:text-brand-700 transition line-clamp-2">{internship.title}</h3>
+      <h3 className="mt-4 font-display font-semibold text-ink-900 group-hover:text-brand-600 transition line-clamp-2">{internship.title}</h3>
       <p className="mt-1.5 text-sm text-ink-500 line-clamp-2">{internship.description}</p>
 
       <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-ink-500">

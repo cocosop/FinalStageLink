@@ -100,12 +100,12 @@ export default function InternshipDetail() {
           <div className="lg:col-span-2 space-y-6">
             <div className="card p-6 sm:p-8">
               <div className="flex items-start gap-4">
-                <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-700 font-semibold">
+                <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-ink-50 text-ink-700 font-semibold">
                   {company?.logo_url ? <img src={company.logo_url} alt="" className="h-14 w-14 rounded-2xl object-cover" /> : <Building2 className="h-6 w-6" />}
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className={badge('bg-brand-50 text-brand-700')}>{labelByType(internship.type)}</span>
+                    <span className={badge('bg-accent-50 text-accent-700')}>{labelByType(internship.type)}</span>
                     <span className={badge(classByStatus(internship.status))}>{labelByStatus(internship.status)}</span>
                   </div>
                   <h1 className="mt-2 font-display text-2xl sm:text-3xl font-bold text-ink-900 text-balance">{internship.title}</h1>
@@ -149,7 +149,7 @@ export default function InternshipDetail() {
                 />
                 {error && <div className="mt-3"><ErrorBanner message={error} /></div>}
                 <div className="mt-4 flex gap-3">
-                  <button onClick={apply} disabled={submitting} className="btn-primary">
+                  <button onClick={apply} disabled={submitting} className="btn-accent">
                     {submitting ? <Spinner /> : <><CheckCircle2 className="h-4 w-4" /> Envoyer ma candidature</>}
                   </button>
                   <button onClick={() => setApplying(false)} className="btn-secondary">Annuler</button>
@@ -186,14 +186,14 @@ export default function InternshipDetail() {
               ) : canApply ? (
                 <div>
                   <p className="text-sm text-ink-500">Vous êtes connecté en tant qu'étudiant.</p>
-                  <button onClick={() => setApplying(true)} className="btn-primary w-full mt-3 py-3">
+                  <button onClick={() => setApplying(true)} className="btn-accent w-full mt-3 py-3">
                     <FileText className="h-4 w-4" /> Postuler à cette offre
                   </button>
                 </div>
               ) : !profile ? (
                 <div>
                   <p className="text-sm text-ink-500">Connectez-vous pour postuler.</p>
-                  <Link to="/signin" className="btn-primary w-full mt-3 py-3">Connexion</Link>
+                  <Link to="/signin" className="btn-accent w-full mt-3 py-3">Connexion</Link>
                   <Link to="/signup" className="btn-secondary w-full mt-2">Créer un compte</Link>
                 </div>
               ) : profile.role === 'company' ? (

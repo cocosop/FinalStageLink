@@ -12,13 +12,13 @@ export default function Navbar() {
     : '/student'
 
   return (
-    <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-ink-200/70">
-      <div className="container-page flex h-20 items-center justify-between">
+    <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-ink-200/70">
+      <div className="container-page flex h-18 items-center justify-between" style={{ height: '4.5rem' }}>
         <Link to="/" className="flex items-center group">
           <img
             src="/edited-photo_(2).png"
             alt="Stagelink"
-            className="h-16 w-auto transition group-hover:scale-105"
+            className="h-14 w-auto transition group-hover:scale-105"
           />
         </Link>
 

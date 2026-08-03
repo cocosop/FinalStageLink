@@ -82,9 +82,9 @@ function Overview() {
         <p className="text-ink-500 mt-1">Bienvenue dans votre espace de gestion.</p>
       </div>
       <div className="grid gap-4 sm:grid-cols-3">
-        <StatCard label="Offres publiées" value={internships.length} icon={<Briefcase className="h-4 w-4" />} />
-        <StatCard label="Offres ouvertes" value={internships.filter((i) => i.status === 'open').length} icon={<CheckCircle2 className="h-4 w-4" />} />
-        <StatCard label="Candidatures reçues" value={apps.length} icon={<FileText className="h-4 w-4" />} />
+        <StatCard label="Offres publiées" value={internships.length} icon={<Briefcase className="h-4 w-4" />} tone="neutral" />
+        <StatCard label="Offres ouvertes" value={internships.filter((i) => i.status === 'open').length} icon={<CheckCircle2 className="h-4 w-4" />} tone="accent" />
+        <StatCard label="Candidatures reçues" value={apps.length} icon={<FileText className="h-4 w-4" />} tone="brand" />
       </div>
 
       <div>
@@ -99,7 +99,7 @@ function Overview() {
           <div className="card divide-y divide-ink-100">
             {internships.slice(0, 5).map((it) => (
               <div key={it.id} className="p-4 flex items-center gap-4">
-                <div className="grid h-10 w-10 place-items-center rounded-lg bg-brand-50 text-brand-700"><Briefcase className="h-4 w-4" /></div>
+                <div className="grid h-10 w-10 place-items-center rounded-lg bg-ink-50 text-ink-600"><Briefcase className="h-4 w-4" /></div>
                 <div className="min-w-0 flex-1">
                   <p className="font-medium text-ink-900 truncate">{it.title}</p>
                   <p className="text-xs text-ink-500">{labelByType(it.type)} · {formatDate(it.created_at)}</p>
@@ -282,7 +282,7 @@ function Internships() {
                   <div className="flex items-center gap-2 flex-wrap">
                     <h3 className="font-display font-semibold text-ink-900">{it.title}</h3>
                     <span className={badge(classByStatus(it.status))}>{labelByStatus(it.status)}</span>
-                    <span className={badge('bg-brand-50 text-brand-700')}>{labelByType(it.type)}</span>
+                    <span className={badge('bg-accent-50 text-accent-700')}>{labelByType(it.type)}</span>
                   </div>
                   <p className="mt-1 text-sm text-ink-500 line-clamp-2">{it.description}</p>
                   <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-500">
@@ -416,7 +416,7 @@ function CompanyProfile() {
       <h2 className="font-display text-2xl font-bold text-ink-900">Profil entreprise</h2>
       <form onSubmit={save} className="card p-6 space-y-5">
         <div className="flex items-center gap-4">
-          <div className="grid h-16 w-16 place-items-center rounded-2xl bg-brand-100 text-brand-700 font-display font-bold text-xl">{initials(form.name ?? '?')}</div>
+          <div className="grid h-16 w-16 place-items-center rounded-2xl bg-ink-50 text-ink-700 font-display font-bold text-xl">{initials(form.name ?? '?')}</div>
           <div>
             <p className="font-medium text-ink-900">{form.name || 'Nouvelle entreprise'}</p>
             {company?.verified ? <span className={badge('bg-accent-100 text-accent-700')}>Vérifiée</span> : <span className={badge('bg-amber-100 text-amber-700')}>Non vérifiée</span>}

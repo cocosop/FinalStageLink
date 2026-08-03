@@ -48,7 +48,7 @@ export default function Browse() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <section className="border-b border-ink-200 bg-white">
+      <section className="bg-gradient-to-b from-ink-50 to-white border-b border-ink-200">
         <div className="container-page py-10">
           <h1 className="font-display text-3xl sm:text-4xl font-bold text-ink-900">Offres de stage</h1>
           <p className="mt-2 text-ink-500">Parcourez les stages académiques et professionnels publiés par les entreprises vérifiées.</p>

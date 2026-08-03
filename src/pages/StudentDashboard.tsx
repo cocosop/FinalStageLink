@@ -63,9 +63,9 @@ function Overview() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
-        <StatCard label="Candidatures envoyées" value={stats.total} icon={<FileText className="h-4 w-4" />} />
-        <StatCard label="En cours de revue" value={stats.reviewing} icon={<Clock className="h-4 w-4" />} />
-        <StatCard label="Acceptées" value={stats.accepted} icon={<Briefcase className="h-4 w-4" />} />
+        <StatCard label="Candidatures envoyées" value={stats.total} icon={<FileText className="h-4 w-4" />} tone="neutral" />
+        <StatCard label="En cours de revue" value={stats.reviewing} icon={<Clock className="h-4 w-4" />} tone="brand" />
+        <StatCard label="Acceptées" value={stats.accepted} icon={<Briefcase className="h-4 w-4" />} tone="accent" />
       </div>
 
       <div>
@@ -81,7 +81,7 @@ function Overview() {
           <div className="card divide-y divide-ink-100">
             {apps.slice(0, 5).map((a) => (
               <div key={a.id} className="p-4 flex items-center gap-4">
-                <div className="grid h-10 w-10 place-items-center rounded-lg bg-brand-50 text-brand-700"><FileText className="h-4 w-4" /></div>
+                <div className="grid h-10 w-10 place-items-center rounded-lg bg-ink-50 text-ink-600"><FileText className="h-4 w-4" /></div>
                 <div className="min-w-0 flex-1">
                   <Link to={`/internships/${a.internship_id}`} className="font-medium text-ink-900 hover:text-brand-700 truncate block">{a.internship?.title ?? 'Offre'}</Link>
                   <p className="text-xs text-ink-500">{a.internship?.location ?? ''} · {timeAgo(a.created_at)}</p>
@@ -137,7 +137,7 @@ function Applications() {
         <div className="card divide-y divide-ink-100">
           {apps.map((a) => (
             <div key={a.id} className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center gap-4">
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-700"><FileText className="h-5 w-5" /></div>
+              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-50 text-ink-600"><FileText className="h-5 w-5" /></div>
               <div className="min-w-0 flex-1">
                 <Link to={`/internships/${a.internship_id}`} className="font-medium text-ink-900 hover:text-brand-700">{a.internship?.title ?? 'Offre'}</Link>
                 <p className="text-xs text-ink-500 mt-0.5">
@@ -223,7 +223,7 @@ function Profile() {
           <Avatar name={profile?.full_name} size={64} />
           <div>
             <p className="font-medium text-ink-900">{profile?.email}</p>
-            <span className={badge('bg-brand-50 text-brand-700')}>Étudiant</span>
+            <span className={badge('bg-accent-50 text-accent-700')}>Étudiant</span>
           </div>
         </div>
         <div>

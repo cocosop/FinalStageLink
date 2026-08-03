@@ -79,12 +79,12 @@ function Overview() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <StatCard label="Utilisateurs" value={counts.users} icon={<Users className="h-4 w-4" />} />
-        <StatCard label="Entreprises" value={counts.companies} hint={`${counts.verified} vérifiées`} icon={<Building2 className="h-4 w-4" />} />
-        <StatCard label="Offres de stage" value={counts.internships} hint={`${counts.open} ouvertes`} icon={<Briefcase className="h-4 w-4" />} />
-        <StatCard label="Candidatures" value={counts.applications} icon={<FileText className="h-4 w-4" />} />
-        <StatCard label="Entreprises vérifiées" value={counts.verified} icon={<ShieldCheck className="h-4 w-4" />} />
-        <StatCard label="Offres ouvertes" value={counts.open} icon={<CheckCircle2 className="h-4 w-4" />} />
+        <StatCard label="Utilisateurs" value={counts.users} icon={<Users className="h-4 w-4" />} tone="neutral" />
+        <StatCard label="Entreprises" value={counts.companies} hint={`${counts.verified} vérifiées`} icon={<Building2 className="h-4 w-4" />} tone="brand" />
+        <StatCard label="Offres de stage" value={counts.internships} hint={`${counts.open} ouvertes`} icon={<Briefcase className="h-4 w-4" />} tone="neutral" />
+        <StatCard label="Candidatures" value={counts.applications} icon={<FileText className="h-4 w-4" />} tone="brand" />
+        <StatCard label="Entreprises vérifiées" value={counts.verified} icon={<ShieldCheck className="h-4 w-4" />} tone="accent" />
+        <StatCard label="Offres ouvertes" value={counts.open} icon={<CheckCircle2 className="h-4 w-4" />} tone="accent" />
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
@@ -230,7 +230,7 @@ function CompaniesPage() {
           {companies.map((c) => (
             <div key={c.id} className="card p-5">
               <div className="flex items-start gap-3">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-700 font-display font-bold">{initials(c.name)}</div>
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-ink-50 text-ink-700 font-display font-bold">{initials(c.name)}</div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
                     <h3 className="font-display font-semibold text-ink-900">{c.name}</h3>
@@ -299,7 +299,7 @@ function InternshipsPage() {
                 <tr key={it.id} className="hover:bg-ink-50/50">
                   <td className="px-4 py-3 font-medium text-ink-900 max-w-xs truncate">{it.title}</td>
                   <td className="px-4 py-3 text-ink-600">{it.company?.name ?? '—'}</td>
-                  <td className="px-4 py-3"><span className={badge('bg-brand-50 text-brand-700')}>{labelByType(it.type)}</span></td>
+                  <td className="px-4 py-3"><span className={badge('bg-accent-50 text-accent-700')}>{labelByType(it.type)}</span></td>
                   <td className="px-4 py-3"><span className={badge(classByStatus(it.status))}>{labelByStatus(it.status)}</span></td>
                   <td className="px-4 py-3 text-right">
                     <select value={it.status} onChange={(e) => setStatus(it, e.target.value as Internship['status'])} className="input py-1.5 text-xs w-auto inline-block mr-2">
